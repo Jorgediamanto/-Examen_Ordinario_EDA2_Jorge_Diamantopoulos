@@ -20,6 +20,21 @@ def main():
     T = nx.minimum_spanning_tree(G, algorithm='prim', weight='weight')
     print(T.edges())
 
+
+
+    # Encontrar el camino más corto entre Tatooine y Dagobah
+    path1 = nx.shortest_path(G, 'Tatooine', 'Dagobah', weight='weight')
+    print("Shortest path from Tatooine to Dagobah:", path1)
+
+    # Encontrar el camino más corto entre Alderaan y Endor
+    path2 = nx.shortest_path(G, 'Alderaan', 'Endor', weight='weight')
+    print("Shortest path from Alderaan to Endor:", path2)
+
+    # Encontrar el camino más corto entre Hoth y Tatooine
+    path3 = nx.shortest_path(G, 'Hoth', 'Tatooine', weight='weight')
+    print("Shortest path from Hoth to Tatooine:", path3)
+
+
      # Encontrar todos los planetas a los que se puede llegar desde Tatooine
     successors = nx.bfs_successors(G, 'Tatooine')
     print("All planets reachable from Tatooine:", list(successors))
